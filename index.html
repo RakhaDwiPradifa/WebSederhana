@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World 3D</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom 3D effect */
+    .rotate-3d {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .rotate-3d:hover .inner {
+      transform: rotateY(360deg);
+    }
+
+    .inner {
+      transition: transform 2s ease-in-out;
+      transform: rotateY(0deg);
+    }
+
+    /* Background animation */
+    body {
+      background: linear-gradient(120deg, #1e3a8a, #9333ea, #f43f5e);
+      background-size: 600% 600%;
+      animation: bgMove 15s ease infinite;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen text-white font-bold text-6xl">
+  <div class="rotate-3d">
+    <div class="inner px-10 py-6 bg-white bg-opacity-10 rounded-2xl shadow-2xl backdrop-blur-sm hover:scale-110 transform transition duration-700">
+      Hello World
+    </div>
+  </div>
+</body>
+</html>
