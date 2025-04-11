@@ -19,7 +19,7 @@ jobs:
 
       - name: Deploy to ECS
         run:
-        ssh -o StrictHostKeyChecking=no ubuntu@13.229.105.95
+        ssh -o StrictHostKeyChecking=no ubuntu@13.229.105.95 << 'EOF'
           cd /var/www/html/WebSederhana
           git pull origin main
           #Restart nginx 
